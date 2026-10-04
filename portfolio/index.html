@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Aiden Aysun: projects, research, and experience in machine learning and robotics.">
+  <meta name="theme-color" content="#e6ecf4">
+  <title>Portfolio — Aiden Aysun</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="wide">
+  <nav class="topnav">
+    <a href="../index.html">Home</a>
+    <a href="../experience.html">Experience</a>
+    <a href="../research.html">Research</a>
+    <a href="../robotics.html">Robotics</a>
+    <a href="../projects.html">Projects</a>
+    <a href="../portfolio/">Portfolio</a>
+    <a href="../assets/Aiden_Aysun_CV.pdf" target="_blank" rel="noopener">CV</a>
+  </nav>
+
+  <h1>Portfolio</h1>
+  <p class="subtitle">Projects, research, and experience, with a focus on machine learning and control for robotics.</p>
+
+  <div class="filters" id="filters" aria-label="Filter by category">
+    <button type="button" class="active" data-filter="all">All <span class="count"></span></button>
+    <button type="button" data-filter="research">Research <span class="count"></span></button>
+    <button type="button" data-filter="robotics">Robotics <span class="count"></span></button>
+    <button type="button" data-filter="software">Software <span class="count"></span></button>
+    <button type="button" data-filter="experience">Experience <span class="count"></span></button>
+  </div>
+
+  <h2>Featured</h2>
+  <div class="cards">
+    <a class="card" href="Machine-Learning-Fisheries-Aquaculture/" data-tags="research experience">
+      <div class="card-meta"><span class="tags"># research · experience</span><span>2026</span></div>
+      <h3>Machine Learning for Fisheries and Aquaculture</h3>
+      <p>MIT UROP: physics-informed neural networks and a digital twin for fish growth, plus object detection and a GUI for shellfish larvae.</p>
+    </a>
+    <a class="card" href="Spectral-Sensing/" data-tags="research">
+      <div class="card-meta"><span class="tags"># research · hardware · ml</span><span>2025</span></div>
+      <h3>ML-Enhanced Spectral Sensing</h3>
+      <p>Co-authored paper: a Random Forest on a 10-channel AS7341 sensor cut color detection error by about 87% versus cosine similarity under varying light.</p>
+    </a>
+    <a class="card" href="Autonomous-Pathing/" data-tags="robotics">
+      <div class="card-meta"><span class="tags"># robotics · control</span><span>2023–2025</span></div>
+      <h3>Odometry-Based Autonomous Pathing</h3>
+      <p>Logged pose from odometry and IMU data to generate optimized paths, tracked by a continuous drive-to-position controller.</p>
+    </a>
+    <a class="card" href="Direct-Tutor/" data-tags="software">
+      <div class="card-meta"><span class="tags"># software</span><span>2026</span></div>
+      <h3>Direct Tutor</h3>
+      <p>Full-stack app that matches students with tutors, built with React, Node.js, PostgreSQL, Stripe, and AWS SES.</p>
+    </a>
+    <a class="card" href="YouTube-Rewind-Controller/" data-tags="software">
+      <div class="card-meta"><span class="tags"># software</span><span>2025</span></div>
+      <h3>YouTube Rewind Controller</h3>
+      <p>Published Manifest V3 Chrome extension that adds a hotkey for continuous, low-latency rewind.</p>
+    </a>
+    <a class="card" href="Flywheel-Shooter-and-Spindexer/" data-tags="robotics">
+      <div class="card-meta"><span class="tags"># robotics · hardware</span><span>2025–26</span></div>
+      <h3>Flywheel Shooter and Spindexer</h3>
+      <p>Flywheel shooter with an adjustable flapper and a compact spindexer, sized with rotational energy calculations.</p>
+    </a>
+  </div>
+
+  <h2>All work</h2>
+  <ul class="archive">
+    <li data-tags="research experience"><span class="year">2026</span><span><a href="Machine-Learning-Fisheries-Aquaculture/">Machine Learning for Fisheries and Aquaculture</a> — digital twin, PINNs, shellfish larvae detection</span><span class="tag">#research</span></li>
+    <li data-tags="software"><span class="year">2026</span><span><a href="Direct-Tutor/">Direct Tutor</a> — tutor matching web app</span><span class="tag">#software</span></li>
+    <li data-tags="research"><span class="year">2025</span><span><a href="Spectral-Sensing/">ML-Enhanced Spectral Sensing</a> — Spectral Sensing Research</span><span class="tag">#research</span></li>
+    <li data-tags="software"><span class="year">2025</span><span><a href="YouTube-Rewind-Controller/">YouTube Rewind Controller</a> — <a href="https://chromewebstore.google.com/detail/rewind-yt/iflkicohhojndjmbnkplocjimjkimbjp" target="_blank" rel="noopener">Chrome Web Store</a></span><span class="tag">#software</span></li>
+    <li data-tags="robotics"><span class="year">2023–25</span><span><a href="Autonomous-Pathing/">Odometry-Based Autonomous Pathing</a> — odometry, IMU, drive-to-position control</span><span class="tag">#robotics</span></li>
+    <li data-tags="robotics software"><span class="year">2023–25</span><span><a href="Autonomous-Configuration-Menu/">Autonomous Configuration Menu</a> — finite state machine, used through the FTC State Championship</span><span class="tag">#robotics</span></li>
+    <li data-tags="robotics"><span class="year">2023–24</span><span><a href="Intake-and-Claw/">Intake and Claw Design</a> — induced-fit fingers, three degrees of freedom</span><span class="tag">#robotics</span></li>
+    <li data-tags="robotics"><span class="year">FTC</span><span><a href="Flywheel-Shooter-and-Spindexer/">Flywheel Shooter and Spindexer</a> — energy-based sizing, motion studies</span><span class="tag">#robotics</span></li>
+    <li data-tags="robotics"><span class="year">FTC</span><span><a href="Torque-and-Motor-Selection/">Torque and Motor Selection</a> — lead screw torque and gearbox matching</span><span class="tag">#robotics</span></li>
+    <li data-tags="software"><span class="year">—</span><span><a href="Assistive-Notes-Processor/">Assistive Notes Processor</a> — thresholding pipeline for readable notes</span><span class="tag">#software</span></li>
+  </ul>
+
+  <p class="back"><a href="../assets/Aiden_Aysun_Portfolio.pdf" target="_blank" rel="noopener">Full maker portfolio (PDF)</a> · <a href="../index.html">Home</a></p>
+  <footer>© 2026 Aiden Aysun · <a href="https://github.com/aidenaysun">GitHub</a> · <a href="https://www.linkedin.com/in/aiden-aysun/">LinkedIn</a></footer>
+
+  <script>
+    (function () {
+      var items = document.querySelectorAll('[data-tags]');
+      var buttons = document.querySelectorAll('#filters button');
+      function has(el, tag) { return (' ' + el.getAttribute('data-tags') + ' ').indexOf(' ' + tag + ' ') !== -1; }
+      buttons.forEach(function (b) {
+        var f = b.getAttribute('data-filter');
+        var n = f === 'all' ? document.querySelectorAll('.archive li').length
+                            : document.querySelectorAll('.archive li[data-tags~="' + f + '"]').length;
+        b.querySelector('.count').textContent = n;
+        b.addEventListener('click', function () {
+          buttons.forEach(function (x) { x.classList.toggle('active', x === b); });
+          items.forEach(function (el) { el.hidden = !(f === 'all' || has(el, f)); });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

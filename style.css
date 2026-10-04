@@ -1,25 +1,29 @@
 :root {
-  --bg: #f2b441;      /* yellow-orange: change this one value to retheme */
-  --ink: #1f1608;
-  --muted: #5a4217;
-  --rule: rgba(31, 22, 8, 0.25);
+  --bg: #e6ecf4;      /* fallback / theme color */
+  --bg-gradient: linear-gradient(160deg, #f5f7fb 0%, #e3eaf3 50%, #c9d6e8 100%);
+  --ink: #14213d;
+  --muted: #4a5a73;
+  --rule: rgba(20, 33, 61, 0.2);
 }
- 
+
 * { box-sizing: border-box; }
- 
-html { background: var(--bg); }
- 
+
+html {
+  min-height: 100%;
+  background: var(--bg) var(--bg-gradient) fixed;
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0 auto;
   max-width: 40rem;
   padding: 4rem 1.5rem 5rem;
-  background: var(--bg);
   color: var(--ink);
   font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   font-size: 1.05rem;
   line-height: 1.6;
 }
- 
+
 a {
   color: var(--ink);
   text-decoration: underline;
@@ -28,48 +32,110 @@ a {
 }
 a:hover { text-decoration-thickness: 2px; }
 a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
- 
+
 .profile {
-  display: block;
+  float: left;
   width: 9rem;
   height: 9rem;
   object-fit: cover;
+  object-position: top left;
   border-radius: 50%;
-  margin: 0 0 1.5rem;
+  margin: 0 1.5rem 1rem 0;
 }
- 
+
 h1 {
   margin: 0 0 0.25rem;
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 1.1;
 }
- 
+
 h2 {
+  clear: both;
   margin: 2.75rem 0 0.75rem;
   padding-bottom: 0.35rem;
   border-bottom: 1px solid var(--rule);
   font-size: 1.35rem;
 }
- 
+
+h3 { margin: 1.5rem 0 0.4rem; font-size: 1.1rem; }
+p { margin: 0 0 1rem; }
+.intro { margin-top: 1.25rem; }
+.meta { color: var(--muted); }
+p.meta { margin: -0.25rem 0 0.75rem; font-size: 0.95rem; }
+ul.bullets { list-style: disc; padding-left: 1.25rem; }
+
 .subtitle { margin: 0; color: var(--muted); }
 .contact  { margin: 0.5rem 0 0; }
- 
+
 .nav { margin: 0 0 2.5rem; color: var(--muted); }
- 
+
+.topnav {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.95rem;
+}
+
 ul { margin: 0; padding: 0; list-style: none; }
 li { margin: 0 0 0.6rem; }
 li .meta { color: var(--muted); }
- 
+
 .back { margin-top: 3rem; }
- 
+
 footer {
   margin-top: 4rem;
   color: var(--muted);
   font-size: 0.9rem;
 }
- 
+
+/* Wide screens: pin the photo near the window's left edge, clear of the text column */
+@media (min-width: 64rem) {
+  .profile {
+    float: none;
+    position: absolute;
+    top: 4rem;
+    left: 1.5rem;
+    margin: 0;
+  }
+}
+
+@media (max-width: 40rem) {
+  .topnav {
+    position: static;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
 @media (max-width: 480px) {
   body { padding-top: 2.5rem; }
   h1 { font-size: 2rem; }
 }
+/* Portfolio page */
+body.wide { max-width: 60rem; }
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 0; }
+.filters button {
+  font: inherit; font-size: 0.9rem; color: var(--ink); cursor: pointer;
+  background: transparent; border: 1px solid var(--rule); border-radius: 999px;
+  padding: 0.25rem 0.85rem;
+}
+.filters button:hover, .filters button.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.filters .count { opacity: 0.65; margin-left: 0.2rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr)); gap: 1rem; }
+.card {
+  display: block; text-decoration: none; padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.55); border: 1px solid var(--rule); border-radius: 8px;
+}
+.card:hover { background: rgba(255, 255, 255, 0.85); border-color: var(--ink); }
+.card h3 { margin: 0.5rem 0 0.35rem; }
+.card p { margin: 0; font-size: 0.95rem; color: var(--muted); }
+.card-meta { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.85rem; color: var(--muted); }
+.archive li { display: grid; grid-template-columns: 4.5rem 1fr auto; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--rule); margin: 0; }
+.archive .year, .archive .tag { color: var(--muted); font-size: 0.9rem; }
+[hidden] { display: none !important; }
+@media (max-width: 40rem) { .archive li { grid-template-columns: 4rem 1fr; } .archive .tag { display: none; } }
+.crumb { margin: 0 0 1.25rem; color: var(--muted); font-size: 0.95rem; }
