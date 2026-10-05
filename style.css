@@ -33,14 +33,27 @@ a {
 a:hover { text-decoration-thickness: 2px; }
 a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 
-.profile {
+.profile-block {
   float: left;
+  width: 9rem;
+  margin: 0 1.5rem 1rem 0;
+}
+
+.profile {
+  display: block;
   width: 9rem;
   height: 9rem;
   object-fit: cover;
   object-position: top left;
   border-radius: 50%;
-  margin: 0 1.5rem 1rem 0;
+}
+
+.profile-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
 }
 
 h1 {
@@ -93,7 +106,7 @@ footer {
 
 /* Wide screens: pin the photo near the window's left edge, clear of the text column */
 @media (min-width: 64rem) {
-  .profile {
+  .profile-block {
     float: none;
     position: absolute;
     top: 4rem;
@@ -115,7 +128,20 @@ footer {
   body { padding-top: 2.5rem; }
   h1 { font-size: 2rem; }
 }
+/* Home page: compact, to-the-point sections */
+html:has(body.home) {
+  background: linear-gradient(rgba(245, 247, 251, 0.55), rgb(251, 245, 245)),
+              url("assets/Background.jpg") center / cover no-repeat fixed;
+}
+body.home h2 { margin: 1.75rem 0 0.4rem; padding-bottom: 0.2rem; font-size: 1rem; }
+body.home ul { font-size: 0.92rem; line-height: 1.45; }
+body.home li { margin: 0 0 0.3rem; }
+body.home .meta { font-size: 0.85rem; }
 /* Portfolio page */
+html:has(body.portfolio) {
+  background: linear-gradient(rgb(251, 245, 245), rgba(245, 247, 251, 0.817)),
+              url("assets/Background6.jpg") center / cover no-repeat fixed;
+}
 body.wide { max-width: 60rem; }
 .filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 0; }
 .filters button {

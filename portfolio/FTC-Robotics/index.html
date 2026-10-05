@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FTC Robotics 2022–2026: odometry-based autonomous control, a configuration menu, and mechanism design.">
+  <meta name="theme-color" content="#e6ecf4">
+  <title>FTC Robotics — Aiden Aysun</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <nav class="topnav">
+    <a href="../../index.html">Home</a>
+    <a href="../../portfolio/index.html">Portfolio</a>
+    <a href="../../assets/Aiden_Aysun_CV.pdf" target="_blank" rel="noopener">CV</a>
+  </nav>
+
+  <p class="crumb"><a href="../index.html">← Portfolio</a></p>
+  <h1>FTC Robotics</h1>
+  <p class="subtitle">2022–2026 — autonomous control and mechanism design</p>
+
+  <h2>Odometry-Based Autonomous Pathing</h2>
+  <p class="meta">Used in the 2023–2025 seasons</p>
+  <p>Our early autonomous used timed, stop-and-go position drives that were slow and imprecise. I replaced them by logging the robot's global pose (x, y, θ) from odometry and IMU data, plotting those runs, and generating optimized paths from the plots. A continuous drive-to-position controller then follows the path, which cut runtime and improved precision.</p>
+  <p>Tools: Android Studio, Java, OpenCV, TensorFlow.</p>
+
+  <h2>Autonomous Configuration Menu</h2>
+  <p class="meta">2023 season, reused in 2024–2025</p>
+  <p>In the 2023 season our autonomous had to coordinate with our alliance partner's in a shared space, so parameters like start and truss delays, park location, detected color and which program to run had to be adjustable before each match.</p>
+  <p>I built a menu interface as a finite state machine that cycles through six entries with bounded wrap-around, using a pointer to the current entry, modular indexing and switch cases for context-sensitive control. It let us adapt quickly to field conditions and partner strategies, was reused in the 2024–2025 season, and helped our team reach the FTC State Championship.</p>
+
+  <h2>Intake and Claw Design</h2>
+  <p class="meta">2023–2024 — Autodesk Fusion</p>
+  <p>One challenge of the 2023–2024 FTC season was to collect pyramid-shaped game elements arranged in random orientations. Our robot began with a passive intake, but it had a weak grip when clipping and was inconsistent with pieces in arbitrary orientations.</p>
+  <p>I designed a custom claw: a gearbox-driven actuator with induced-fit, pyramid-shaped fingers optimized for form-fit contact, mounted on a servo-driven mechanism that provides three degrees of freedom (rotation about the x, y and z axes) to orient the claw. The geometry improved contact reliability and scoring efficiency and was integrated into the final robot.</p>
+
+  <h2>Flywheel Shooter and Spindexer</h2>
+  <p class="meta">Autodesk Fusion</p>
+  <p>For a game that required shooting plastic ball artifacts up a high chute, I designed a shooter system with:</p>
+  <ul class="bullets">
+    <li>A flywheel to launch the ball, balancing speed and accuracy by keeping contact for a controlled acceleration.</li>
+    <li>A "flapper" mechanism that adjusts the launch angle through a linkage and an encoder-equipped Axon servo.</li>
+    <li>A compact 12-inch "spindexer" with three custom walls and an integrated kicker that indexes balls and feeds the shooter, within the 18-inch size limit, with space reserved for color sensors for automatic sorting.</li>
+  </ul>
+  <h3>Flywheel sizing</h3>
+  <p>I modeled the flywheel as a solid disk: moment of inertia I&nbsp;=&nbsp;½mr², stored energy E&nbsp;=&nbsp;¼mr²ω², matched to the energy needed to bring the ball to its target speed (½m<sub>b</sub>v<sub>b</sub>²). That let me choose mass and radius within the geometric constraints, and I verified the radius by modeling the ball's path along the ramp in Fusion 360.</p>
+  <p>The modular design includes mounting points for a lazy-susan turret for more accurate shooting. Fusion 360 motion studies of the full assembly (intake, spindexer, shooter, flapper and turret) confirmed kinematic clearances and mechanical stability.</p>
+
+  <h2>Torque and Motor Selection</h2>
+  <p class="meta">Hardware analysis</p>
+  <p>When selecting linear actuator motors, I applied physics and calculus to compute the minimum required torque instead of relying on trial and error.</p>
+  <p>Given subsystem mass m and required acceleration a, F&nbsp;=&nbsp;ma. For a lead screw of effective radius r<sub>s</sub> and mechanical efficiency η&nbsp;&lt;&nbsp;1, the torque requirement is τ&nbsp;=&nbsp;m·a·r<sub>s</sub>&nbsp;/&nbsp;η.</p>
+  <p>I computed efficiency curves and matched gearbox ratios to find the best torque-speed balance, settling on a 435&nbsp;RPM motor that minimizes losses and heat.</p>
+
+  <p class="back"><a href="../index.html">← Back to portfolio</a></p>
+  <footer>© 2026 Aiden Aysun</footer>
+</body>
+</html>
