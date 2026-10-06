@@ -159,6 +159,7 @@ body.wide { max-width: 60rem; }
 .card:hover { background: rgba(255, 255, 255, 0.85); border-color: var(--ink); }
 .card h3 { margin: 0.5rem 0 0.35rem; }
 .card p { margin: 0; font-size: 0.95rem; color: var(--muted); }
+.card-img { display: block; width: 100%; height: 9rem; object-fit: contain; margin-bottom: 0.5rem; }
 .card-meta { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.85rem; color: var(--muted); }
 .archive li { display: grid; grid-template-columns: 4.5rem 1fr auto; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--rule); margin: 0; }
 .archive .year, .archive .tag { color: var(--muted); font-size: 0.9rem; }
