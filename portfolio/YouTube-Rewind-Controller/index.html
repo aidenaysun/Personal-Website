@@ -4,26 +4,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Published Manifest V3 Chrome extension that adds a hotkey for continuous, low-latency rewind.">
-  <meta name="theme-color" content="#e6ecf4">
+  <meta name="theme-color" content="#f4f6fa">
   <title>YouTube Rewind Controller — Aiden Aysun</title>
   <link rel="stylesheet" href="../../style.css">
 </head>
-<body>
-  <nav class="topnav">
-    <a href="../../index.html">Home</a>
-    <a href="../../portfolio/index.html">Portfolio</a>
-    <a href="../../assets/Aiden_Aysun_CV.pdf" target="_blank" rel="noopener">CV</a>
+<body class="project-detail">
+  <nav class="topnav" aria-label="Main navigation">
+    <a href="../../index.html">About</a>
+    <a href="../index.html" aria-current="page">Projects</a>
   </nav>
 
-  <p class="crumb"><a href="../index.html">← Portfolio</a></p>
-  <h1>YouTube Rewind Controller</h1>
-  <p class="subtitle">JavaScript, HTML, CSS — Chrome Extension (published), July 2025</p>
+  <main>
 
-  <p>A Chrome extension built on Manifest V3 that adds a hotkey for continuous rewind of YouTube videos in small increments: hold R and playback steps back 0.2&nbsp;s every 100&nbsp;ms (t<sub>new</sub>&nbsp;=&nbsp;max(0,&nbsp;t<sub>current</sub>&nbsp;−&nbsp;Δt)).</p>
-  <p>It is event-driven. A background script watches tab updates and messages a content script, which handles keyboard input, DOM manipulation and timer-based state updates, and injects an overlay that shows when rewind is active. The result is low-latency, continuous playback reversal from a single key.</p>
-  <p><a href="https://chromewebstore.google.com/detail/rewind-yt/iflkicohhojndjmbnkplocjimjkimbjp" target="_blank" rel="noopener">Chrome Web Store</a></p>
+    <article class="project-layout" aria-label="YouTube Rewind Controller">
+      <div class="project-description">
+        <h1>YouTube Rewind Controller</h1>
+        <p class="subtitle">JavaScript, HTML, CSS — Chrome Extension (published), July 2025</p>
 
-  <p class="back"><a href="../index.html">← Back to portfolio</a></p>
+        <p>A Chrome extension built on Manifest V3 that adds a hotkey for continuous rewind of YouTube videos in small increments: hold R and playback steps back 0.2&nbsp;s every 100&nbsp;ms (t<sub>new</sub>&nbsp;=&nbsp;max(0,&nbsp;t<sub>current</sub>&nbsp;−&nbsp;Δt)).</p>
+        <p>It is event-driven. A background script watches tab updates and messages a content script, which handles keyboard input, DOM manipulation and timer-based state updates, and injects an overlay that shows when rewind is active. The result is low-latency, continuous playback reversal from a single key.</p>
+        <div class="project-resources" aria-label="Project resources"><span>Links:</span> <a href="https://chromewebstore.google.com/detail/rewind-yt/iflkicohhojndjmbnkplocjimjkimbjp">Chrome Web Store</a></div>
+      </div>
+      <aside class="project-media" aria-label="Project media">
+        <!-- Replace the illustration with project photos or a video as assets become available.
+          Video example: <video controls playsinline preload="metadata" poster="../../assets/your-poster.jpg"><source src="../../assets/your-video.mp4" type="video/mp4"></video>
+          Add more figures here to build a project gallery. -->
+          <figure class="project-figure">
+            <img src="../../assets/thumbnails/rewind.svg" alt="Rewind controller project illustration">
+            <figcaption>Rewind controller project illustration</figcaption>
+          </figure>
+      </aside>
+    </article>
+
+  </main>
   <footer>© 2026 Aiden Aysun</footer>
 </body>
 </html>

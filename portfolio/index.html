@@ -3,79 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio of Aiden Aysun: projects, research, and experience in machine learning and robotics.">
-  <meta name="theme-color" content="#e6ecf4">
-  <title>Portfolio — Aiden Aysun</title>
+  <meta name="description" content="Projects by Aiden Aysun in machine learning, robotics, and software.">
+  <meta name="theme-color" content="#f4f6fa">
+  <title>Projects &mdash; Aiden Aysun</title>
   <link rel="stylesheet" href="../style.css">
 </head>
-<body class="wide portfolio">
-  <nav class="topnav">
-    <a href="../index.html">Home</a>
-    <a href="../portfolio/index.html">Portfolio</a>
-    <a href="../assets/Aiden_Aysun_CV.pdf" target="_blank" rel="noopener">CV</a>
+<body class="wide projects">
+  <nav class="topnav" aria-label="Main navigation">
+    <a href="../index.html">About</a>
+    <a href="index.html" aria-current="page">Projects</a>
   </nav>
-
-  <h1>Portfolio</h1>
-  <p class="subtitle">Projects, research, and experience, with a focus on machine learning and control for robotics.</p>
-
-  <div class="filters" id="filters" aria-label="Filter by category">
-    <button type="button" class="active" data-filter="all">All <span class="count"></span></button>
-    <button type="button" data-filter="research">Research <span class="count"></span></button>
-    <button type="button" data-filter="projects">Projects <span class="count"></span></button>
-    <button type="button" data-filter="experience">Experience <span class="count"></span></button>
-  </div>
-
-  <h2>Featured</h2>
-  <div class="cards">
-    <a class="card" href="Machine-Learning-Fisheries-Aquaculture/index.html" data-tags="research experience">
-      <div class="card-meta"><span class="tags"># research · experience</span><span>2026</span></div>
-      <h3>Machine Learning for Fisheries and Aquaculture</h3>
-      <p>MIT UROP: physics-informed neural networks and a digital twin for fish growth, plus object detection and a GUI for shellfish larvae.</p>
-    </a>
-    <a class="card" href="Spectral-Sensing/index.html" data-tags="research">
-      <div class="card-meta"><span class="tags"># research · hardware · ml</span><span>2025</span></div>
-      <h3>ML-Enhanced Spectral Sensing</h3>
-      <p>Co-authored paper: a Random Forest on a 10-channel AS7341 sensor cut color detection error by about 87% versus cosine similarity under varying light.</p>
-    </a>
-    <a class="card" href="Direct-Tutor/index.html" data-tags="projects">
-      <img class="card-img" src="../assets/DirectTutorIcon.png" alt="Direct Tutor icon">
-      <div class="card-meta"><span class="tags"># projects</span><span>2026</span></div>
-      <h3>Direct Tutor</h3>
-      <p>Full-stack app that matches students with tutors, built with React, Node.js, PostgreSQL, Stripe, and AWS SES.</p>
-    </a>
-    <a class="card" href="YouTube-Rewind-Controller/index.html" data-tags="projects">
-      <div class="card-meta"><span class="tags"># projects</span><span>2025</span></div>
-      <h3>YouTube Rewind Controller</h3>
-      <p>Published Manifest V3 Chrome extension that adds a hotkey for continuous, low-latency rewind.</p>
-    </a>
-  </div>
-
-  <h2>All work</h2>
-  <ul class="archive">
-    <li data-tags="research experience"><span class="year">2026</span><span><a href="Machine-Learning-Fisheries-Aquaculture/index.html">Machine Learning for Fisheries and Aquaculture</a> — digital twin, PINNs, shellfish larvae detection</span><span class="tag">#research</span></li>
-    <li data-tags="projects"><span class="year">2026</span><span><a href="Direct-Tutor/index.html">Direct Tutor</a> — tutor matching web app</span><span class="tag">#projects</span></li>
-    <li data-tags="research"><span class="year">2025</span><span><a href="Spectral-Sensing/index.html">ML-Enhanced Spectral Sensing</a> — Spectral Sensing Research</span><span class="tag">#research</span></li>
-    <li data-tags="projects"><span class="year">2025</span><span><a href="YouTube-Rewind-Controller/index.html">YouTube Rewind Controller</a> — <a href="https://chromewebstore.google.com/detail/rewind-yt/iflkicohhojndjmbnkplocjimjkimbjp" target="_blank" rel="noopener">Chrome Web Store</a></span><span class="tag">#projects</span></li>
-    <li data-tags="projects"><span class="year">2022–26</span><span><a href="FTC-Robotics/index.html">FTC Robotics</a> — odometry-based autonomy, configuration menu, intake and claw, flywheel shooter, motor selection</span><span class="tag">#projects</span></li>
-    <li data-tags="projects"><span class="year">—</span><span><a href="Assistive-Notes-Processor/index.html">Assistive Notes Processor</a> — thresholding pipeline for readable notes</span><span class="tag">#projects</span></li>
-  </ul>
-
-  <script>
-    (function () {
-      var items = document.querySelectorAll('[data-tags]');
-      var buttons = document.querySelectorAll('#filters button');
-      function has(el, tag) { return (' ' + el.getAttribute('data-tags') + ' ').indexOf(' ' + tag + ' ') !== -1; }
-      buttons.forEach(function (b) {
-        var f = b.getAttribute('data-filter');
-        var n = f === 'all' ? document.querySelectorAll('.archive li').length
-                            : document.querySelectorAll('.archive li[data-tags~="' + f + '"]').length;
-        b.querySelector('.count').textContent = n;
-        b.addEventListener('click', function () {
-          buttons.forEach(function (x) { x.classList.toggle('active', x === b); });
-          items.forEach(function (el) { el.hidden = !(f === 'all' || has(el, f)); });
-        });
-      });
-    })();
-  </script>
+  <main>
+    <header class="page-heading"><p class="eyebrow">Selected work</p><h1>Projects</h1></header>
+    <div class="project-grid">
+      <a class="project-card" href="Machine-Learning-Fisheries-Aquaculture/index.html">
+        <div class="thumbnail"><img src="../assets/thumbnails/aquaculture.svg" alt="Illustration of fish and a growth model" width="640" height="360"></div>
+        <h2>Machine Learning for Fisheries and Aquaculture</h2>
+        <p class="project-date"><time datetime="2026-09">Sep. 2026</time> &ndash; Present</p>
+      </a>
+      <a class="project-card" href="Direct-Tutor/index.html">
+        <div class="thumbnail thumb-tutor"><img class="tutor-icon" src="../assets/DirectTutorIcon.png" alt="Direct Tutor logo" width="640" height="360"></div>
+        <h2>Direct Tutor</h2>
+        <p class="project-date"><time datetime="2026-06">Jun. 2026</time> &ndash; Present</p>
+      </a>
+      <a class="project-card" href="Spectral-Sensing/index.html">
+        <div class="thumbnail"><img src="../assets/thumbnails/spectral.svg" alt="Illustration of spectral sensor readings" width="640" height="360"></div>
+        <h2>ML-Enhanced Spectral Sensing</h2>
+        <p class="project-date"><time datetime="2025-06">Jun. 2025</time> &ndash; <time datetime="2025-10">Oct. 2025</time></p>
+      </a>
+      <a class="project-card" href="YouTube-Rewind-Controller/index.html">
+        <div class="thumbnail"><img src="../assets/thumbnails/rewind.svg" alt="Illustration of video rewind controls" width="640" height="360"></div>
+        <h2>YouTube Rewind Controller</h2>
+        <p class="project-date"><time datetime="2025-07">Jul. 2025</time></p>
+      </a>
+      <a class="project-card" href="FTC-Robotics/index.html">
+        <div class="thumbnail"><img src="../assets/thumbnails/robotics.svg" alt="Illustration of a robot following a path" width="640" height="360"></div>
+        <h2>FTC Robotics</h2>
+        <p class="project-date"><time datetime="2022">2022</time> &ndash; <time datetime="2026">2026</time></p>
+      </a>
+      <a class="project-card" href="Assistive-Notes-Processor/index.html">
+        <div class="thumbnail"><img src="../assets/thumbnails/notes.svg" alt="Illustration of high-contrast notes" width="640" height="360"></div>
+        <h2>Assistive Notes Processor</h2>
+        <!-- Replace this placeholder when the project date is available. -->
+        <p class="project-date">Date to be added</p>
+      </a>
+    </div>
+  </main>
+  <footer>&copy; 2026 Aiden Aysun</footer>
 </body>
 </html>

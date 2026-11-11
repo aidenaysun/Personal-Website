@@ -4,45 +4,59 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Co-authored paper: a Random Forest on a 10-channel AS7341 sensor cut color detection error by about 87% versus cosine similarity under varying light.">
-  <meta name="theme-color" content="#e6ecf4">
+  <meta name="theme-color" content="#f4f6fa">
   <title>ML-Enhanced Spectral Sensing — Aiden Aysun</title>
   <link rel="stylesheet" href="../../style.css">
 </head>
-<body>
-  <nav class="topnav">
-    <a href="../../index.html">Home</a>
-    <a href="../../portfolio/index.html">Portfolio</a>
-    <a href="../../assets/Aiden_Aysun_CV.pdf" target="_blank" rel="noopener">CV</a>
+<body class="project-detail">
+  <nav class="topnav" aria-label="Main navigation">
+    <a href="../../index.html">About</a>
+    <a href="../index.html" aria-current="page">Projects</a>
   </nav>
 
-  <p class="crumb"><a href="../index.html">← Portfolio</a></p>
-  <h1>ML-Enhanced Spectral Sensing</h1>
-  <p class="subtitle">Co-authored with Brody Aysun and Colin Aysun — Jun. 2025–Oct. 2025</p>
+  <main>
 
-  <p><strong>Machine Learning-Enhanced Spectral Sensing for Advanced Color Discrimination Under Varying Ambience</strong></p>
-  <p>Our team's autonomous color detection failed under inconsistent lighting at an FTC League Championship. We set out to build a color detection system that holds up when the lighting changes, using a low-cost 10-channel AS7341 spectral sensor on an Arduino Nano.</p>
+    <article class="project-layout" aria-label="ML-Enhanced Spectral Sensing">
+      <div class="project-description">
+        <h1>ML-Enhanced Spectral Sensing</h1>
+        <p class="subtitle">Co-authored with Brody Aysun and Colin Aysun — Jun. 2025–Oct. 2025</p>
 
-  <h2>Approach</h2>
-  <ul class="bullets">
-    <li>Collected normalized F1–F8 channel readings (415–680&nbsp;nm) for five paint colors under four lighting conditions, calibrated against a dark reference and white PTFE tape.</li>
-    <li>Baseline: cosine similarity against pre-calibrated reference spectra, converted to probabilities with a softmax. The temperature was tuned by minimizing negative log-likelihood (T&nbsp;≈&nbsp;0.09).</li>
-    <li>Machine learning: a 100-tree Random Forest classifier (scikit-learn, 80/20 split) trained on the raw normalized channels, learning illumination-independent patterns without any illuminant correction.</li>
-    <li>Compared both systems with calibrated probabilities, box plots per lighting condition, RMS error, and a Welch's t-test.</li>
-  </ul>
+        <p><strong>Machine Learning-Enhanced Spectral Sensing for Advanced Color Discrimination Under Varying Ambience</strong></p>
+        <p>Our team's autonomous color detection failed under inconsistent lighting at an FTC League Championship. We set out to build a color detection system that holds up when the lighting changes, using a low-cost 10-channel AS7341 spectral sensor on an Arduino Nano.</p>
 
-  <h2>Results</h2>
-  <ul class="bullets">
-    <li>Average accuracy of 0.86 for the Random Forest versus 0.43 for cosine similarity.</li>
-    <li>Roughly an 87% reduction in mean squared error relative to the baseline (RMS 0.19 versus 0.57); Welch's t-test gave p&nbsp;&lt;&nbsp;0.001.</li>
-    <li>Yellow light was the hardest condition, with some confusion between yellow and orange.</li>
-  </ul>
+        <h2>Approach</h2>
+        <ul class="bullets">
+        <li>Collected normalized F1–F8 channel readings (415–680&nbsp;nm) for five paint colors under four lighting conditions, calibrated against a dark reference and white PTFE tape.</li>
+        <li>Baseline: cosine similarity against pre-calibrated reference spectra, converted to probabilities with a softmax. The temperature was tuned by minimizing negative log-likelihood (T&nbsp;≈&nbsp;0.09).</li>
+        <li>Machine learning: a 100-tree Random Forest classifier (scikit-learn, 80/20 split) trained on the raw normalized channels, learning illumination-independent patterns without any illuminant correction.</li>
+        <li>Compared both systems with calibrated probabilities, box plots per lighting condition, RMS error, and a Welch's t-test.</li>
+        </ul>
 
-  <h2>My role</h2>
-  <p>The paper's roles were deliberately loose, with the work shared almost evenly. My primary responsibility was hardware and CAD: soldering the sensor, wiring it securely to the Arduino Nano, and designing the 3D-printed shroud (Fusion 360, PrusaSlicer) that blocks ambient light for the LED condition. I also designed the Arduino firmware to log and plot all 10 channels, and worked on the softmax conversion that let us compare cosine similarity with the Random Forest's probabilities.</p>
+        <h2>Results</h2>
+        <ul class="bullets">
+        <li>Average accuracy of 0.86 for the Random Forest versus 0.43 for cosine similarity.</li>
+        <li>Roughly an 87% reduction in mean squared error relative to the baseline (RMS 0.19 versus 0.57); Welch's t-test gave p&nbsp;&lt;&nbsp;0.001.</li>
+        <li>Yellow light was the hardest condition, with some confusion between yellow and orange.</li>
+        </ul>
 
-  <p><a href="../../assets/Spectrometer_Research_Paper.pdf" target="_blank" rel="noopener">Read the full paper (PDF)</a> · <a href="https://github.com/caysun/Spectral-Robotics">GitHub</a></p>
+        <h2>My role</h2>
+        <p>The paper's roles were deliberately loose, with the work shared almost evenly. My primary responsibility was hardware and CAD: soldering the sensor, wiring it securely to the Arduino Nano, and designing the 3D-printed shroud (Fusion 360, PrusaSlicer) that blocks ambient light for the LED condition. I also designed the Arduino firmware to log and plot all 10 channels, and worked on the softmax conversion that let us compare cosine similarity with the Random Forest's probabilities.</p>
+        <div class="project-resources" aria-label="Project resources"><span>Links:</span> <a href="../../assets/Spectrometer_Research_Paper.pdf" target="_blank" rel="noopener">Research paper (PDF)</a> <span class="resource-divider" aria-hidden="true">/</span> <a href="https://github.com/caysun/Spectral-Robotics">Code</a></div>
+      </div>
+      <aside class="project-media" aria-label="Project media">
+        <!-- Replace the illustration with project photos or a video as assets become available.
+          Video example: <video controls playsinline preload="metadata" poster="../../assets/your-poster.jpg"><source src="../../assets/your-video.mp4" type="video/mp4"></video>
+          Add more figures here to build a project gallery. -->
+          <figure class="project-figure paper-figure">
+            <object class="paper-preview" data="../../assets/Spectrometer_Research_Paper.pdf#view=FitH" type="application/pdf" aria-label="Spectral sensing research paper">
+              <a href="../../assets/Spectrometer_Research_Paper.pdf"><img src="../../assets/thumbnails/spectral.svg" alt="Spectral sensing project illustration">Open the research paper (PDF)</a>
+            </object>
+            <figcaption><a href="../../assets/Spectrometer_Research_Paper.pdf" target="_blank" rel="noopener">Read the full research paper (PDF)</a></figcaption>
+          </figure>
+      </aside>
+    </article>
 
-  <p class="back"><a href="../index.html">← Back to portfolio</a></p>
+  </main>
   <footer>© 2026 Aiden Aysun</footer>
 </body>
 </html>

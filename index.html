@@ -1,49 +1,45 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Aiden Aysun - machine learning and control for robotics. MIT AI &amp; Decision Making.">
-  <meta name="theme-color" content="#e6ecf4">
-  <title>Aiden Aysun</title>
+  <meta name="description" content="About Aiden Aysun: machine learning, robotics, and software.">
+  <meta name="theme-color" content="#f4f6fa">
+  <title>About — Aiden Aysun</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="home">
-  <nav class="topnav">
-    <a href="index.html">Home</a>
-    <a href="portfolio/index.html">Portfolio</a>
-    <a href="assets/Aiden_Aysun_CV.pdf" target="_blank" rel="noopener">CV</a>
+<body class="about">
+  <nav class="topnav" aria-label="Main navigation">
+    <a href="index.html" aria-current="page">About</a>
+    <a href="portfolio/index.html">Projects</a>
   </nav>
-
-  <div class="profile-block">
-    <img class="profile" src="assets/profile.png" alt="Aiden Aysun">
-    <p class="profile-links">
-      <a href="https://github.com/aidenaysun">GitHub</a>
-      <a href="https://www.linkedin.com/in/aiden-aysun/">LinkedIn</a>
-    </p>
-  </div>
-
-  <h1>Aiden Aysun</h1>
-  <p class="subtitle">B.S. AI &amp; Decision Making · MIT '30</p>
-  <p class="contact"><a href="mailto:aaysun@mit.edu">aaysun@mit.edu</a></p>
-
-  <h2 id="experience">Experience</h2>
-  <ul>
-    <li><strong>ML Researcher</strong>, MIT Sea Grant — Sep. 2026-Present</li>
-  </ul>
-
-  <h2>Research</h2>
-  <ul>
-    <li>ML-enhanced spectral sensing for color discrimination — <a href="assets/Spectrometer_Research_Paper.pdf">paper</a>, 2025</li>
-  </ul>
-
-  <h2>Projects</h2>
-  <ul>
-    <li>Direct Tutor — full-stack tutor matching app (React, Node.js, PostgreSQL, Stripe, AWS)</li>
-    <li>YouTube Rewind Controller — <a href="https://chromewebstore.google.com/detail/rewind-yt/iflkicohhojndjmbnkplocjimjkimbjp">published Chrome extension</a></li>
-    <li>Assistive Notes Processor — image-processing pipeline for readable notes</li>
-  </ul>
-
+  <main class="about-layout">
+    <aside class="profile-block" aria-label="Photo and contact information">
+      <img class="profile" src="assets/profile2.JPEG" alt="Aiden Aysun" width="280" height="320">
+      <div class="profile-contact">
+        <a href="mailto:aaysun@mit.edu">aaysun@mit.edu</a>
+        <div class="profile-links">
+          <a href="https://github.com/aidenaysun">GitHub</a>
+          <a href="https://www.linkedin.com/in/aiden-aysun/">LinkedIn</a>
+        </div>
+      </div>
+    </aside>
+    <div class="about-copy">
+      <h1>Hello, I'm Aiden</h1>
+      <p class="subtitle">AI &amp; Decision Making · MIT ’30</p>
+      <!-- About template: edit these paragraphs to introduce yourself. -->
+      <section aria-labelledby="intro-heading">
+        <p>I’m studying AI &amp; Decision Making at MIT. I build things at the intersection of machine learning, software, and robotics, with an interest in turning ideas into systems that work in the real world.</p>
+        <p>My work spans machine learning research, full-stack applications, and robot design. I’m currently a machine learning researcher with MIT Sea Grant, working on tools for fisheries and aquaculture.</p>
+      </section>
+      <!-- Interests template: personalize these paragraphs with your interests and hobbies. -->
+      <section aria-labelledby="interests-heading">
+        <h2 id="interests-heading">What interests me</h2>
+        <p>I’m interested in how machines sense, learn, and make decisions. I enjoy exploring machine learning and control for robotics, building useful software, and connecting physical hardware with intelligent systems.</p>
+        <p>I like projects that bring different disciplines together, from spectral sensing and computer vision to autonomous motion and mechanical design.</p>
+      </section>
+    </div>
+  </main>
   <footer>© 2026 Aiden Aysun</footer>
 </body>
 </html>
